@@ -1,0 +1,11 @@
+insert into users ( id, login, mail ) values ( 1, 'testowy 1' , 'testowy@jeden.com')
+insert into users ( id, login, mail ) values ( 2, 'testowy 2' , 'testowy@dwacom')
+insert into users ( id, login, mail ) values ( 3, 'testowy 3' , 'testowy@trzy.com')
+insert into users ( id, login, mail ) values ( 4, 'testowy 4' , 'testowy@cztery.com')
+insert into users ( id, login, mail ) values ( 5, 'testowy 5' , 'testowy@piec.com')
+
+insert into lectures( id, title, description ) values ( 1, 'prelekcja 1' , 'prelekacja o jeden')
+insert into lectures ( id, title, description  ) values ( 2, 'prelekcja 2' , 'prelekacja o dwa')
+insert into lectures ( id, title, description  ) values ( 3, 'prelekcja 3' , 'prelekacja o trzy')
+insert into lectures ( id, title, description  ) values ( 4, 'prelekcja 4' , 'prelekacja o cztery')
+insert into lectures ( id, title, description ) values ( 5, 'prelekcja 5' , 'prelekacja o piec')
