@@ -8,5 +8,8 @@
   CREATE TABLE LECTURES (
       id BIGINT AUTO_INCREMENT PRIMARY KEY,
       title VARCHAR(32) NOT NULL ,
-      description VARCHAR(500) NOT NULL
+      description VARCHAR(500) NOT NULL,
+      sits INT NOT NULL,
+      LECTURES_CODE VARCHAR(300)
+
   );
