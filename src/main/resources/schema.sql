@@ -1,7 +1,11 @@
   CREATE TABLE USERS(
       id BIGINT AUTO_INCREMENT PRIMARY KEY,
-      login VARCHAR(32) NOT NULL ,
-      mail VARCHAR(64) NOT NULL,
+      username VARCHAR(32) NOT NULL ,
+      password VARCHAR(32) NOT NUll,
+      email VARCHAR(64) NOT NULL,
+      enabled BIT,
+      locked BIT,
+      USER_ROLE VARCHAR(10),
       USER_CODE VARCHAR(300)
   );
 
