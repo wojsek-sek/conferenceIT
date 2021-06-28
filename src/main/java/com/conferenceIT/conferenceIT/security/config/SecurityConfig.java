@@ -1,7 +1,6 @@
 package com.conferenceIT.conferenceIT.security.config;
 
-import com.conferenceIT.conferenceIT.security.PasswordEncoder;
-import com.conferenceIT.conferenceIT.service.RegistrationService;
+
 import com.conferenceIT.conferenceIT.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -29,7 +28,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .permitAll()
                 .anyRequest()
                 .authenticated().and()
-                .formLogin();
+                .formLogin()
+                .loginPage("/login")
+                .permitAll();
         http.headers().frameOptions().disable();
 
 
