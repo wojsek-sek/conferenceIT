@@ -1,4 +1,4 @@
-package com.conferenceIT.conferenceIT.config;
+package com.conferenceIT.conferenceIT.security.config;
 
 
 

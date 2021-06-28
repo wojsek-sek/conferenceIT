@@ -25,6 +25,7 @@ public class LecturesController {
 
     }
 
+
     @GetMapping("/find/{id}")
     public ResponseEntity<Lectures> getLecturesById(@PathVariable("id") Long id ) {
         Lectures lectures= lecturesService.findUsersById(id);
@@ -49,11 +50,6 @@ public class LecturesController {
         lecturesService.deleteLectures(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
-
-
-
-
 
 
 }

@@ -3,24 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script>
+        var baseurl = "http://localhost:8080/lectures";
+        function loadLectures(){
+            var xmlHttpLectures = new XMLHttpRequest();
+            xmlHttpLectures.open("GET",baseurl+"/all",true);
+            xmlHttpLectures.onreadystatechange = function() {
+                if (xmlHttpLectures.readyState === 4 && xmlHttpLectures.status === 200){
+                    var lectures = JSON.parse(xmlHttpLectures.responseText);
+                    var tbltop = `<table>
+                    <tr><th>Id</th><th>Tytuł</th><th>Opis prelekcji</th><th>Liczba miejsc</th></tr>`;
+                //main table content we fill from data from the rest call
+                var main ="";
+                for (i = 0; i < lectures.length; i++){
+                  main += "<tr><td>"+lectures[i].id+"</td><td>"+lectures[i].title+"</td><td>"+lectures[i].description+"</td><td>"+lectures[i].sits+"</td></tr>";
+                }
+                var tblbottom = "</table>";
+                var tbl = tbltop + main + tblbottom;
+                document.getElementById("lecturesinfo").innerHTML = tbl;
+              }
+            };
+            xmlHttpLectures.send();
+          }
+          window.onload = function(){
+            loadLectures();
+          }
+    </script>
 </head>
 <body>
-    <div>
-        <h1>Witamy na stonie do zapisow na prelekcje IT</h1>
-    </div>
-    <div>
-        <p>Plan Prelekcji</p>
-    </div>
-    <div>
-        <p>Twoje prelekcje </p>
-    </div>
-    <div>
-        <p>Zapisy na prelekcje</p>
-        <button type="button"> Zapisz sie</button>
-    </div>
-    <div>
-        <p> Twoj profil</p>
-    </div>
+<div>
+    <h1>Witamy na stonie do zapisow na prelekcje IT</h1>
+</div>
+<div>
+    <p>Plan Prelekcji</p>
+    <p id="lecturesinfo"></p>
+
+</div>
+<div>
+    <p>Twoje prelekcje </p>
+</div>
+<div>
+    <p>Zapisy na prelekcje</p>
+    <button type="button"> Zapisz sie</button>
+</div>
+<div>
+    <p> Twoj profil</p>
+</div>
 
 
 </body>
